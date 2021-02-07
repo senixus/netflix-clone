@@ -1,0 +1,29 @@
+@import "../../style/variables";
+
+.header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../images/background.jpg");
+  width: 100%;
+  height: 80vh;
+  text-align: center;
+  border-bottom: 8px solid $secondary-color-dark;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &-text {
+    color: $primary-color-white;
+
+    &__head {
+      font-size: 3.5rem;
+      max-width: 640px;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    &__subhead {
+      font-size: 1.7rem;
+      margin-top: -1.5rem;
+    }
+  }
+}

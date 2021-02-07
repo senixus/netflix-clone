@@ -1,0 +1,94 @@
+@import "../../style/variables";
+
+.auth-form {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+
+  &__child {
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 40%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: -1.2rem;
+    padding: 3rem 3rem 8rem 3rem;
+
+    h2 {
+      color: $primary-color-white;
+      padding-bottom: 3rem;
+    }
+  }
+
+  .form {
+    width: 100%;
+
+    &-group {
+      &__control {
+        width: 100%;
+        background-color: $secondary-color-dark;
+        color: $primary-color-gray;
+        outline: none;
+        border: none;
+        padding: 0.6rem 1rem;
+        border-radius: 4px;
+
+        &:focus {
+          color: $primary-color-white;
+        }
+      }
+    }
+
+    &-btn {
+      margin-top: 1.4rem;
+      width: 100%;
+      overflow: none;
+      padding: 0.6rem 2rem;
+      border-radius: 5px;
+      border: none;
+      background-color: $primary-color-red;
+      color: $primary-color-white;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  }
+
+  .check {
+    display: flex;
+    justify-content: space-between;
+
+    .checkbox-div {
+      color: $primary-color-gray;
+
+      span {
+        font-size: 0.9rem;
+      }
+    }
+
+    .need-help {
+      color: $primary-color-gray;
+    }
+  }
+
+  .sign-up {
+    display: flex;
+
+    p {
+      color: $primary-color-gray;
+    }
+
+    a {
+      color: $primary-color-white;
+      margin-left: 0.3rem;
+    }
+  }
+
+  .captcha-info {
+    p {
+      color: $primary-color-gray;
+      padding-top: 1.2rem;
+      font-size: 0.8rem;
+      width: 70%;
+    }
+  }
+}

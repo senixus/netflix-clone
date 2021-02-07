@@ -1,0 +1,48 @@
+@import "../../style/variables";
+
+.collapsible {
+  background-color: $primary-color-dark;
+  &-child {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h1 {
+      color: $primary-color-white;
+      text-align: center;
+      padding-top: 2rem;
+      font-size: 3rem;
+    }
+
+    div {
+      padding-top: 0.8rem;
+      text-align: center;
+
+      .card {
+        background-color: $secondary-color-dark;
+        color: $primary-color-white;
+        border-radius: 0;
+        font-size: 1.6rem;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: -0.6rem;
+        .card-body {
+          padding: 1.7rem;
+          text-align: left;
+        }
+      }
+    }
+    button {
+      background-color: $secondary-color-dark;
+      border-radius: 0 !important;
+      border: none !important;
+      outline: 0 !important;
+      font-size: 1.7rem;
+      padding: 1rem 1rem;
+      width: 80%;
+      text-align: left;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}

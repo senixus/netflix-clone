@@ -1,0 +1,44 @@
+@import "../../style//variables";
+
+.browse-footer {
+  background-color: $netflix-color-dark;
+
+  &__icons {
+    padding: 3rem 3rem 0 2.2rem;
+    display: flex;
+
+    .icons {
+      margin-right: 2rem;
+      list-style-type: none;
+
+      a {
+        font-size: 1.7rem;
+        color: $primary-color-gray;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__child {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .browse-footer__list {
+      padding-bottom: 3rem;
+      ul {
+        list-style-type: none;
+
+        li {
+          margin: 0.5rem 0;
+          a {
+            color: $primary-color-gray;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}

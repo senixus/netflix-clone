@@ -1,0 +1,26 @@
+@import "../../style/variables";
+
+.footer {
+  border-top: 8px solid $secondary-color-dark;
+  background-color: $primary-color-dark;
+
+  &-child {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+
+    ul {
+      margin: 5rem 0;
+      list-style-type: none;
+
+      li {
+        margin: 0.5rem 0;
+        a {
+          color: $primary-color-gray;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
