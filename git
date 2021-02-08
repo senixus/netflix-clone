@@ -1,0 +1,59 @@
+[33mcommit 4808ec248231a88088168f0380d2dad30481aa75[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Nihat <senius.33@gmail.com>
+Date:   Mon Feb 8 23:34:08 2021 +0300
+
+    modal component created
+
+[33mcommit ec809f7c908d7e5ef9f4de7d43cb09914587daa6[m
+Author: Nihat <senius.33@gmail.com>
+Date:   Mon Feb 8 18:57:44 2021 +0300
+
+    reset email and reset password actions added
+
+[33mcommit 543c7d1c86564fcc47f89109da44bed7f5fbf929[m
+Author: Nihat <senius.33@gmail.com>
+Date:   Mon Feb 8 17:29:57 2021 +0300
+
+    dropdown added
+
+[33mcommit 34593ccf138824741c029c584cb5cfe98ba0ad97[m
+Author: Nihat <senius.33@gmail.com>
+Date:   Mon Feb 8 17:28:56 2021 +0300
+
+    Profile component added
+
+[33mcommit c66059a0d604f8fd07b68397dd109c2170030948[m
+Author: Nihat <senius.33@gmail.com>
+Date:   Mon Feb 8 15:58:56 2021 +0300
+
+    some requests deleted
+
+[33mcommit e56a4c7606163cdd079a96c799ca69a7b627fbf4[m
+Author: Nihat <senius.33@gmail.com>
+Date:   Mon Feb 8 15:57:37 2021 +0300
+
+    plans component added
+
+[33mcommit 8b4981c91b39e51f57d3167b7944ccf984db12ac[m
+Author: Nihat <senius.33@gmail.com>
+Date:   Sun Feb 7 18:06:03 2021 +0300
+
+    initial commit
+
+[33mcommit 00574faf0535b6bd7a495041ed66b85ca18f5d91[m
+Author: Nihat <senius.33@gmail.com>
+Date:   Sun Feb 7 17:56:20 2021 +0300
+
+    initial commit
+
+[33mcommit ec00e145ff502d524adfd8876829c0a8fd833def[m
+Author: Nihat <senius.33@gmail.com>
+Date:   Wed Feb 3 18:10:18 2021 +0300
+
+    Initialize project using Create React App
+
+[33mcommit e8e4f99a823fde5e5e688a1fd8b90f7a21eeb98c[m
+Author: Nihat <51033114+senixus@users.noreply.github.com>
+Date:   Sun Feb 7 18:06:24 2021 +0300
+
+    Initial commit
