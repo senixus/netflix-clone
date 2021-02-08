@@ -4,6 +4,8 @@ export const REGISTER = "REGISTER";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 export const CURRENT_USER = "CURRENT_USER";
+export const UPDATE_PASSWORD = "UPDATE_PASSWORD";
+export const UPDATE_EMAIL = "UPDATE_EMAIL";
 
 // Movies
 

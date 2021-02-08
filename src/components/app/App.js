@@ -9,6 +9,8 @@ import TvShows from "../../pages/TvShows/TvShows";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import Plans from "../Plans/Plans";
 import Profile from "../profile/Profile";
+import Password from "../profile/Password";
+import Email from "../profile/Email";
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
         <Route path="/tv" component={TvShows} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/profile" component={Profile} />
+        <PrivateRoute path="/profile" component={Profile} />
+        <PrivateRoute path="/password" component={Password} />
+        <PrivateRoute path="/email" component={Email} />
       </Switch>
     </>
   );

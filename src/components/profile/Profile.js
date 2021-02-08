@@ -1,9 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import "./profile.scss";
 
 const Profile = () => {
+  const user = useSelector((state) => state.auth.user);
+
   return (
     <>
       <Navbar />
@@ -20,19 +23,19 @@ const Profile = () => {
             </div>
             <div className="profile-childs__information">
               <ul>
-                <li>Email</li>
-                <li>Password</li>
+                <li>{user.email}</li>
+                <li>{user.password || <p>******</p>} </li>
                 <li>Standart</li>
               </ul>
               <ul>
                 <li>
-                  <Link to="">Change email</Link>
+                  <Link to="/email">Change email</Link>
                 </li>
                 <li>
-                  <Link to="">Change password</Link>
+                  <Link to="/password">Change password</Link>
                 </li>
                 <li>
-                  <Link to="/">Change plan</Link>
+                  <Link to="/change-plan">Change plan</Link>
                 </li>
               </ul>
             </div>
