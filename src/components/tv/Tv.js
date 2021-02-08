@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../modal/Modal";
 import "../movies/movies.scss";
 
 const Tv = ({ shows, title }) => {
+  const [movie, setMovie] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = (movie) => {
+    setMovie(movie);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div>
       <main className="movies">
@@ -14,9 +27,11 @@ const Tv = ({ shows, title }) => {
                 alt="popular"
                 className="movies-child__image"
                 key={show.id}
+                onClick={() => openModal(movie)}
               />
             ))}
         </div>
+        <Modal open={isOpen} closeModal={closeModal} movie={movie} />
       </main>
     </div>
   );
