@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
 import { Link, useHistory } from "react-router-dom";
 import brand from "../../images/brand.png";
+import avatar from "../../images/Netflix-avatar.png";
 import { useDispatch, useSelector } from "react-redux";
 import { currentUserAction } from "../../redux/actions/authActions/currentUserActions";
 import { logoutActions } from "../../redux/actions/authActions/logoutActions";
@@ -67,12 +68,17 @@ const Navbar = () => {
           />
           <Fa.FaSearch className="search-icon" onClick={handleSearchBar} />
           <Link
-            to="/"
-            onClick={() => logout()}
-            className="browse-navbar__link"
+            className="browse-navbar__link dropdown-btn"
             style={{ marginLeft: "1rem" }}
           >
-            Profile
+            <img src={avatar} alt="netflix avatar" className="avatar" />
+            <div className="dropdown-content">
+              <Link to="/profile">Profile</Link>
+              <hr style={{ blackgroundColor: "white" }} />
+              <Link to="/" onClick={() => logout()}>
+                Sign Out
+              </Link>
+            </div>
           </Link>
         </li>
       );

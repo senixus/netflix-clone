@@ -5,6 +5,7 @@
   background-color: transparent;
   align-items: center;
   padding: 0 3rem;
+  border-bottom: 1px solid $primary-color-gray;
 
   &-logo {
     &__item {
@@ -80,6 +81,12 @@
         &:hover {
           text-decoration: none;
         }
+
+        .avatar {
+          width: 35px;
+          height: auto;
+          border-radius: 5px;
+        }
       }
     }
   }
@@ -91,5 +98,39 @@
   }
   100% {
     width: 0;
+  }
+}
+
+.dropdown-btn {
+  position: relative;
+
+  &:hover .dropdown-content {
+    display: block;
+  }
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: $primary-color-dark;
+  height: 130px;
+  width: 130px;
+  padding: 1rem;
+  margin-top: 0.1rem;
+  opacity: 0.7;
+  margin-left: -3.5rem;
+  border: 1px solid $primary-color-gray;
+  display: none;
+  a {
+    display: block;
+    color: $primary-color-white;
+
+    &:hover {
+      text-decoration: none;
+      color: $primary-color-white;
+    }
+  }
+
+  hr {
+    background-color: $primary-color-white;
   }
 }
