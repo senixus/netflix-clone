@@ -7,6 +7,7 @@ import BrowsePage from "../../pages/Browse/BrowsePage";
 import Movies from "../../pages/Movies/Movies";
 import TvShows from "../../pages/TvShows/TvShows";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import Plans from "../Plans/Plans";
 
 function App() {
   return (
