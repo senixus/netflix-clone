@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./modal.scss";
 import { VscChromeClose } from "react-icons/vsc";
-import { CgMathPlus } from "react-icons/cg";
+import { CgMathPlus, CgCheck } from "react-icons/cg";
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { GrPlayFill } from "react-icons/gr";
+import { MdCheck } from "react-icons/md";
 import ReactDOM from "react-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addShowToList } from "../../redux/actions/myListActions/addShowToList";
+import { getUserShowList } from "../../redux/actions/myListActions/getUserShowList";
+import { removeShowFromTheList } from "../../redux/actions/myListActions/removeShowFromTheList";
 
 const Modal = ({ open, closeModal, movie }) => {
+  const user = useSelector((state) => state.auth.user);
+  const dispatch = useDispatch();
+  const addShow = (uid, show) => dispatch(addShowToList(uid, show));
+  const getListItems = (user) => dispatch(getUserShowList(user));
+
+  useEffect(() => {
+    getListItems(user.uid);
+  }, [getListItems, user.uid]);
+
+  const addShowMyList = (uid, show) => {
+    if (user) {
+      addShow(uid, show);
+    }
+  };
+
   if (!open) return null;
 
   return ReactDOM.createPortal(
@@ -39,8 +59,16 @@ const Modal = ({ open, closeModal, movie }) => {
                 </button>
               </div>
               <div>
-                <button type="button">
+                <button
+                  type="button"
+                  onClick={() => addShowMyList(user.uid, movie)}
+                >
                   <CgMathPlus className="plus-icon" />
+                </button>
+              </div>
+              <div style={{ display: "none" }}>
+                <button type="button">
+                  <MdCheck className="plus-icon" />
                 </button>
               </div>
               <div>

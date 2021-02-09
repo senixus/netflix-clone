@@ -41,7 +41,7 @@ const Navbar = () => {
           </li>
           <li className="navbar-navs__item">
             {user && (
-              <Link to="/my-list" className="navbar-navs__link">
+              <Link to="/browse/my-list" className="navbar-navs__link">
                 My List
               </Link>
             )}
@@ -74,7 +74,7 @@ const Navbar = () => {
             <img src={avatar} alt="netflix avatar" className="avatar" />
             <div className="dropdown-content">
               <Link to="/profile">Profile</Link>
-              <hr style={{ blackgroundColor: "white" }} />
+
               <Link to="/" onClick={() => logout()}>
                 Sign Out
               </Link>

@@ -1,0 +1,33 @@
+@import "../../style/variables";
+
+.my-list {
+  width: 100%;
+  // max-height: 86vh;
+  height: 100%;
+  background-color: $netflix-color-dark;
+  padding-left: 2.5rem;
+  position: absolute;
+  h1 {
+    color: $primary-color-white;
+    padding: 1rem 0 3rem 0;
+  }
+  &__shows {
+    display: flex;
+    flex-wrap: wrap;
+    .list-items {
+      margin: 0.5rem 0;
+      img {
+        width: 250px;
+        max-height: 300px;
+        object-fit: contain;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

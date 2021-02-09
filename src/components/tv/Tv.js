@@ -15,6 +15,7 @@ const Tv = ({ shows, title }) => {
     setIsOpen(false);
   };
 
+  console.log(movie);
   return (
     <div>
       <main className="movies">
@@ -27,7 +28,7 @@ const Tv = ({ shows, title }) => {
                 alt="popular"
                 className="movies-child__image"
                 key={show.id}
-                onClick={() => openModal(movie)}
+                onClick={() => openModal(show)}
               />
             ))}
         </div>

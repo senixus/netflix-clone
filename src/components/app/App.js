@@ -11,6 +11,7 @@ import Plans from "../Plans/Plans";
 import Profile from "../profile/Profile";
 import Password from "../profile/Password";
 import Email from "../profile/Email";
+import MyList from "../myList/MyList";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <PrivateRoute path="/profile" component={Profile} />
         <PrivateRoute path="/password" component={Password} />
         <PrivateRoute path="/email" component={Email} />
+        <PrivateRoute path="/browse/my-list" component={MyList} />
       </Switch>
     </>
   );
