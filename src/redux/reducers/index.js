@@ -23,6 +23,9 @@ import { warTv } from "../reducers/showReducers/warTv";
 
 import { currentUserReducers } from "../reducers/authReducers/currentUserReducer";
 
+// Mylist
+import { getUserShowListReducer } from "../reducers/myListReducers/getUserShowListReducer";
+
 export const rootReducer = combineReducers({
   // Movies
   popularMovie: popularMovies,
@@ -44,4 +47,7 @@ export const rootReducer = combineReducers({
 
   // Auth
   auth: currentUserReducers,
+
+  // List
+  getUserShowList: getUserShowListReducer,
 });

@@ -19,4 +19,6 @@ export const initialState = {
 
   // Auth
   user: {},
+
+  getUserShowList: [],
 };
