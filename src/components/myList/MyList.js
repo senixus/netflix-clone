@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../navbar/Navbar";
 import "./myList.scss";
 import Modal from "../modal/Modal";
+import Footer from "../footer/Footer";
+import { useHistory } from "react-router-dom";
 
 const MyList = () => {
   const user = useSelector((state) => state.auth.user);
@@ -14,19 +16,21 @@ const MyList = () => {
   );
   const [movie, setMovie] = useState({});
   const [isOpen, setIsOpen] = useState(false);
+  const [movieId, setMovieId] = useState(null);
 
-  const openModal = (movie) => {
+  useEffect(() => {
+    getListItems(user.uid);
+  }, [getListItems, user.uid]);
+
+  const openModal = (movie, show) => {
     setMovie(movie);
     setIsOpen(true);
+    setMovieId(show);
   };
 
   const closeModal = () => {
     setIsOpen(false);
   };
-
-  useEffect(() => {
-    getListItems(user.uid);
-  }, [getListItems, user.uid]);
 
   return (
     <>
@@ -36,17 +40,23 @@ const MyList = () => {
         <div className="my-list__shows">
           {getUserShows &&
             getUserShows.map((show) => (
-              <div key={show.id} class="list-items">
+              <div key={show.id} class="list-items" data-id={show.id}>
                 <img
                   src={`https://image.tmdb.org/t/p/original/${show.movie.poster_path}`}
                   alt="show list"
-                  onClick={() => openModal(show.movie)}
+                  onClick={() => openModal(show.movie, show.id)}
                 />
               </div>
             ))}
         </div>
-        <Modal open={isOpen} closeModal={closeModal} movie={movie} />
+        <Modal
+          open={isOpen}
+          closeModal={closeModal}
+          movie={movie}
+          movieId={movieId}
+        />
       </main>
+      <Footer />
     </>
   );
 };

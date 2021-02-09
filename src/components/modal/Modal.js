@@ -1,29 +1,49 @@
 import React, { useEffect } from "react";
 import "./modal.scss";
 import { VscChromeClose } from "react-icons/vsc";
-import { CgMathPlus, CgCheck } from "react-icons/cg";
+import { CgMathPlus } from "react-icons/cg";
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { GrPlayFill } from "react-icons/gr";
 import { MdCheck } from "react-icons/md";
+import { useHistory } from "react-router-dom";
 import ReactDOM from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addShowToList } from "../../redux/actions/myListActions/addShowToList";
 import { getUserShowList } from "../../redux/actions/myListActions/getUserShowList";
 import { removeShowFromTheList } from "../../redux/actions/myListActions/removeShowFromTheList";
 
-const Modal = ({ open, closeModal, movie }) => {
+const Modal = ({ open, closeModal, movie, movieId }) => {
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
   const addShow = (uid, show) => dispatch(addShowToList(uid, show));
   const getListItems = (user) => dispatch(getUserShowList(user));
+  const removeShowFromTheMyList = (movieId) =>
+    dispatch(removeShowFromTheList(movieId));
+  const history = useHistory();
 
   useEffect(() => {
     getListItems(user.uid);
-  }, [getListItems, user.uid]);
+  }, []);
 
   const addShowMyList = (uid, show) => {
     if (user) {
       addShow(uid, show);
+    }
+  };
+
+  const handleIcon = () => {
+    if (history.location.pathname !== "/browse/my-list") {
+      return (
+        <button type="button" onClick={() => addShowMyList(user.uid, movie)}>
+          <CgMathPlus className="plus-icon" />
+        </button>
+      );
+    } else {
+      return (
+        <button type="button" onClick={() => removeShowFromTheMyList(movieId)}>
+          <MdCheck className="plus-icon" />
+        </button>
+      );
     }
   };
 
@@ -58,19 +78,8 @@ const Modal = ({ open, closeModal, movie }) => {
                   Play
                 </button>
               </div>
-              <div>
-                <button
-                  type="button"
-                  onClick={() => addShowMyList(user.uid, movie)}
-                >
-                  <CgMathPlus className="plus-icon" />
-                </button>
-              </div>
-              <div style={{ display: "none" }}>
-                <button type="button">
-                  <MdCheck className="plus-icon" />
-                </button>
-              </div>
+              <div>{handleIcon()}</div>
+
               <div>
                 <button type="button">
                   <FaThumbsUp className="like-icon" />
