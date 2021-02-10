@@ -16,8 +16,8 @@ const Tv = ({ shows, title }) => {
   };
 
   return (
-    <div>
-      <main className="movies">
+    <>
+      <section className="movies">
         <p className="movies-head">{title}</p>
 
         <div className="movies-child">
@@ -34,8 +34,8 @@ const Tv = ({ shows, title }) => {
         </div>
 
         <Modal open={isOpen} closeModal={closeModal} movie={movie} />
-      </main>
-    </div>
+      </section>
+    </>
   );
 };
 

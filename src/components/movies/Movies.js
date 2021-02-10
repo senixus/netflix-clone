@@ -15,7 +15,7 @@ const Movies = ({ movies, title }) => {
     setIsOpen(false);
   };
   return (
-    <main className="movies">
+    <section className="movies">
       <p className="movies-head">{title}</p>
       <div className="movies-child">
         {movies &&
@@ -30,7 +30,7 @@ const Movies = ({ movies, title }) => {
           ))}
       </div>
       <Modal open={isOpen} closeModal={closeModal} movie={movie} />
-    </main>
+    </section>
   );
 };
 
