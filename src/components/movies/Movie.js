@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getActionMovies } from "../../redux/actions/movieActions/getActionMovies";
 import { getCrimeMovies } from "../../redux/actions/movieActions/getCrimeMovies";

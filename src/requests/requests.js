@@ -20,4 +20,6 @@ export const request = {
   getCrimeTvShows: `/discover/tv?api_key=${apiKey}&with_genres=80`,
   getDramaTvShows: `/discover/tv?api_key=${apiKey}&with_genres=18`,
   getWarTvShows: `/discover/tv?api_key=${apiKey}&with_genres=10768`,
+
+  searchShows: `/search/multi?api_key=${apiKey}&language=en-US&page=1&include_adult=false`,
 };

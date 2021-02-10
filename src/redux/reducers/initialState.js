@@ -20,5 +20,10 @@ export const initialState = {
   // Auth
   user: {},
 
+  // MyList
   getUserShowList: [],
+
+  // Search
+
+  searchedShows: [],
 };

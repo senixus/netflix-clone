@@ -10,7 +10,6 @@ import { trendingMovies } from "../reducers/movieReducers/trendingMovies";
 import { warMovies } from "../reducers/movieReducers/warMovies";
 
 // Tv
-
 import { actionAdventureTv } from "../reducers/showReducers/actionAdventureTv";
 import { crimeTv } from "../reducers/showReducers/crimeTv";
 import { dramaTv } from "../reducers/showReducers/dramaTv";
@@ -20,11 +19,13 @@ import { trendingTv } from "../reducers/showReducers/trendingTv";
 import { warTv } from "../reducers/showReducers/warTv";
 
 // Auth
-
 import { currentUserReducers } from "../reducers/authReducers/currentUserReducer";
 
 // Mylist
 import { getUserShowListReducer } from "../reducers/myListReducers/getUserShowListReducer";
+
+// Search
+import { searchReducer } from "../reducers/searchReducers/searchReducer";
 
 export const rootReducer = combineReducers({
   // Movies
@@ -50,4 +51,7 @@ export const rootReducer = combineReducers({
 
   // List
   getUserShowList: getUserShowListReducer,
+
+  // Search
+  search: searchReducer,
 });

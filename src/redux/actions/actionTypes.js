@@ -7,9 +7,13 @@ export const CURRENT_USER = "CURRENT_USER";
 export const UPDATE_PASSWORD = "UPDATE_PASSWORD";
 export const UPDATE_EMAIL = "UPDATE_EMAIL";
 
+// MyList
 export const ADD_SHOW_TO_LIST = "ADD_SHOW_TO_LIST";
 export const GET_USER_SHOW_LIST = "GET_USER_SHOW_LIST";
 export const REMOVE_SHOW_FROM_LIST = "REMOVE_SHOW_FROM_LIST";
+
+// Search
+export const SEARCH_SHOW = "SEARCH_SHOW";
 
 // Movies
 

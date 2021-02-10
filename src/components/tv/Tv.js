@@ -15,23 +15,24 @@ const Tv = ({ shows, title }) => {
     setIsOpen(false);
   };
 
-  console.log(movie);
   return (
     <div>
       <main className="movies">
         <p className="movies-head">{title}</p>
+
         <div className="movies-child">
           {shows &&
             shows.map((show) => (
               <img
                 src={`https://image.tmdb.org/t/p/original/${show.poster_path}`}
-                alt="popular"
+                alt={`${show.title}`}
                 className="movies-child__image"
                 key={show.id}
                 onClick={() => openModal(show)}
               />
             ))}
         </div>
+
         <Modal open={isOpen} closeModal={closeModal} movie={movie} />
       </main>
     </div>

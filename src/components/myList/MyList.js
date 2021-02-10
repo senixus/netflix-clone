@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../navbar/Navbar";
 import "./myList.scss";
 import Modal from "../modal/Modal";
-import Footer from "../footer/Footer";
-import { useHistory } from "react-router-dom";
+import BrowseFooter from "../browseFooter/BrowseFooter";
 
 const MyList = () => {
   const user = useSelector((state) => state.auth.user);
@@ -56,7 +55,7 @@ const MyList = () => {
           movieId={movieId}
         />
       </main>
-      <Footer />
+      <BrowseFooter />
     </>
   );
 };
