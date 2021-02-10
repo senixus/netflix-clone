@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { currentUserAction } from "../../redux/actions/authActions/currentUserActions";
 import { logoutActions } from "../../redux/actions/authActions/logoutActions";
 import * as Fa from "react-icons/fa";
+import { searhShows } from "../../redux/actions/searchActions/searchShow";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -14,11 +15,36 @@ const Navbar = () => {
   const user = useSelector((state) => state.auth.user);
   const history = useHistory();
   const logout = () => dispatch(logoutActions());
+  const search = (show) => dispatch(searhShows(show));
   const [isTrue, setIsTrue] = useState(false);
+  const [show, setShow] = useState("");
 
   useEffect(() => {
     getCurrentUser();
   }, []);
+
+  const handleNavbar = () => {
+    const { pathname } = history.location;
+    if (
+      pathname === "/profile" ||
+      pathname === "/email" ||
+      pathname === "/password" ||
+      pathname === "/browse/my-list"
+    ) {
+      return true;
+    }
+  };
+
+  const handleSearchBar = (e) => {
+    if (e.target) {
+      setIsTrue(!isTrue);
+    }
+  };
+  const handleSearch = (e) => {
+    const query = e.target.value;
+    setShow(query);
+    search(show);
+  };
 
   const handleIndexPage = () => {
     if (history.location.pathname !== "/") {
@@ -51,20 +77,17 @@ const Navbar = () => {
     }
   };
 
-  const handleSearchBar = (e) => {
-    if (e.target) {
-      setIsTrue(true);
-    }
-  };
-
   const checkUserAndPath = () => {
     if (user && history.location.pathname !== "/") {
       return (
         <li className="browse-navbar__item">
           <input
             type="text"
-            placeholder="search something"
+            placeholder="Search movie,tv shows"
             className={isTrue ? `search-bar` : `browse-navbar__search`}
+            onChange={handleSearch}
+            name="show"
+            value={show}
           />
           <Fa.FaSearch className="search-icon" onClick={handleSearchBar} />
           <Link
@@ -94,7 +117,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav
+      className="navbar"
+      style={handleNavbar() && { backgroundColor: "#000" }}
+    >
       <div className="navbar-logo">
         <p className="navbar-logo__item">
           <Link to="/" className="navbar-logo__link">
@@ -102,6 +128,7 @@ const Navbar = () => {
           </Link>
         </p>
       </div>
+
       {handleIndexPage()}
       <div className="last-child">
         <ul className="browse-navbar">{checkUserAndPath()}</ul>
