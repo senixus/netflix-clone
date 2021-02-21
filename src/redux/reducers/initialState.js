@@ -20,10 +20,12 @@ export const initialState = {
   // Auth
   user: {},
 
+  // Messages
+  error: "",
+
   // MyList
   getUserShowList: [],
 
   // Search
-
   searchedShows: [],
 };

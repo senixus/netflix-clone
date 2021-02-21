@@ -10,6 +10,7 @@ const SignIn = () => {
   const login = (email, password) => dispatch(loginAction(email, password));
   const currentUser = useSelector((state) => state.auth.user);
   const history = useHistory();
+  const error = useSelector((state) => state.auth.error);
 
   useEffect(() => {
     const handleCurrentUser = () => {
@@ -37,6 +38,10 @@ const SignIn = () => {
     setUser({ email: "", password: "" });
   };
 
+  const handleError = () => {
+    return error;
+  };
+
   return (
     <div className="auth-form">
       <div className="auth-form__child">
@@ -62,11 +67,13 @@ const SignIn = () => {
               value={user.password}
             />
           </div>
+          <small style={{ color: "red" }}>{handleError()}</small>
           <div className="form-group">
             <button type="submit" className="form-btn">
               Sign In
             </button>
           </div>
+
           <div className="form-group check">
             <div className="checkbox-div">
               <input

@@ -9,8 +9,12 @@ export const registerAction = (email, password) => {
         password
       );
       dispatch({ type: actionTypes.REGISTER, payload: response });
+      console.log(response);
     } catch (error) {
-      console.log(error);
+      dispatch({
+        type: actionTypes.SHOW_ERROR,
+        payload: "Please check your email and password",
+      });
     }
   };
 };

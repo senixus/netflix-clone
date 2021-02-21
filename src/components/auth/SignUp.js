@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./auth.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { registerAction } from "../../redux/actions/authActions/registerActions";
 
@@ -9,16 +9,20 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const register = (email, password) =>
     dispatch(registerAction(email, password));
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
+  const error = useSelector((state) => state.auth.error);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     register(user.email, user.password);
     setUser({ email: "", password: "" });
+  };
+
+  const handleError = () => {
+    return error;
   };
 
   return (
@@ -46,6 +50,8 @@ const SignUp = () => {
               value={user.password}
             />
           </div>
+          <small style={{ color: "red" }}>{handleError()}</small>
+
           <div className="form-group">
             <button type="submit" className="form-btn">
               Sign Up

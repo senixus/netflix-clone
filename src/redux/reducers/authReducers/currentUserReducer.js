@@ -7,6 +7,12 @@ export const currentUserReducers = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
+        error: "",
+      };
+    case actionTypes.SHOW_ERROR:
+      return {
+        ...state,
+        error: action.payload,
       };
 
     default:

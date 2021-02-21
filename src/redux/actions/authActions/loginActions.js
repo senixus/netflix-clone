@@ -7,7 +7,10 @@ export const loginAction = (email, password) => {
       const response = await auth.signInWithEmailAndPassword(email, password);
       dispatch({ type: actionTypes.LOGIN, payload: response });
     } catch (error) {
-      console.log(error);
+      dispatch({
+        type: actionTypes.SHOW_ERROR,
+        payload: "Please check your email and password",
+      });
     }
   };
 };
