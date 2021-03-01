@@ -51,7 +51,7 @@ const Modal = ({ open, closeModal, movie, movieId }) => {
 
   return ReactDOM.createPortal(
     <>
-      <div className="overlay"></div>
+      <div className="overlay" onClick={closeModal}></div>
       <main className="portal-modal">
         <div className="portal-modal__child">
           <div className="portal-modal__image">
@@ -65,30 +65,31 @@ const Modal = ({ open, closeModal, movie, movieId }) => {
               </button>
             </div>
             <div className="portal-modal__btns">
-              <div>
-                <button className="modal-play__btn">
-                  <span
-                    style={{
-                      verticalAlign: "text-bottom",
-                      marginRight: ".5rem",
-                    }}
-                  >
-                    <GrPlayFill />
-                  </span>
-                  Play
-                </button>
-              </div>
-              <div>{handleIcon()}</div>
-
-              <div>
-                <button type="button">
-                  <FaThumbsUp className="like-icon" />
-                </button>
-              </div>
-              <div>
-                <button type="button">
-                  <FaThumbsDown className="like-icon" />
-                </button>
+              <div className="portal-btns__child">
+                <div>
+                  <button className="modal-play__btn">
+                    <span
+                      style={{
+                        verticalAlign: "text-bottom",
+                        marginRight: ".5rem",
+                      }}
+                    >
+                      <GrPlayFill />
+                    </span>
+                    Play
+                  </button>
+                </div>
+                <div>{handleIcon()}</div>
+                <div>
+                  <button type="button">
+                    <FaThumbsUp className="like-icon" />
+                  </button>
+                </div>
+                <div>
+                  <button type="button">
+                    <FaThumbsDown className="like-icon" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>

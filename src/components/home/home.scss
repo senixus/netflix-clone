@@ -150,7 +150,6 @@
         position: absolute;
         top: 11%;
         left: 2%;
-
         video {
           max-width: 100%;
           width: 55rem;
@@ -165,4 +164,13 @@
     height: 8px;
     background-color: $secondary-color-dark !important;
   }
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 550px) {
 }

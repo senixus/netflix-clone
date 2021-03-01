@@ -22,15 +22,17 @@ const Tv = ({ shows, title }) => {
 
         <div className="movies-child">
           {shows &&
-            shows.map((show) => (
-              <img
-                src={`https://image.tmdb.org/t/p/original/${show.poster_path}`}
-                alt={`${show.title}`}
-                className="movies-child__image"
-                key={show.id}
-                onClick={() => openModal(show)}
-              />
-            ))}
+            shows
+              .filter((show, index) => index < 7)
+              .map((show) => (
+                <img
+                  src={`https://image.tmdb.org/t/p/original/${show.poster_path}`}
+                  alt={`${show.title}`}
+                  className="movies-child__image"
+                  key={show.id}
+                  onClick={() => openModal(show)}
+                />
+              ))}
         </div>
 
         <Modal open={isOpen} closeModal={closeModal} movie={movie} />

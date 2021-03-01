@@ -43,7 +43,7 @@ const Browse = () => {
 
   const getRandomMovie = () => {
     randIndex = Math.floor(Math.random() * populars.results.length);
-    console.log(randIndex);
+
     return (
       <main
         className="browse"

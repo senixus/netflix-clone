@@ -9,6 +9,7 @@
     top: 50%;
     left: 55%;
     transform: translate(-50%, -50%);
+    width: 50%;
   }
 
   &__image {
@@ -46,9 +47,13 @@
   }
 
   &__btns {
-    display: flex;
-    position: absolute;
-    bottom: 1rem;
+    position: relative;
+    .portal-btns__child {
+      display: flex;
+      position: absolute;
+      left: 5%;
+      bottom: 22%;
+    }
 
     button {
       border: none;
@@ -60,6 +65,7 @@
       background-color: $secondary-color-gray;
       padding: 0.4rem 2rem;
       font-size: 1.2rem;
+      display: flex;
 
       &:hover {
         background-color: $primary-color-white;
@@ -102,5 +108,38 @@
 
   &:hover {
     border-color: $primary-color-white;
+  }
+}
+
+@media screen and (max-width: 998px) {
+  .portal-modal {
+    &__child {
+      width: 70%;
+    }
+
+    .plus-icon,
+    .like-icon {
+      font-size: 2.5rem;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .portal-modal {
+    &__child {
+      width: 85%;
+      left: 62%;
+    }
+
+    .modal-play__btn {
+      padding: 0.4rem 1.5rem;
+      font-size: 1.1rem;
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  .portal-modal {
+    &__child {
+      width: 100%;
+    }
   }
 }
