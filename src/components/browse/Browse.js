@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import "./browse.scss";
 import { GrPlayFill } from "react-icons/gr";
@@ -45,44 +45,45 @@ const Browse = () => {
     randIndex = Math.floor(Math.random() * populars.results.length);
 
     return (
-      <main
-        className="browse"
-        style={{
-          backgroundImage: `linear-gradient(to bottom,rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(https://image.tmdb.org/t/p/original/${populars.results[randIndex].backdrop_path})`,
-        }}
-      >
-        <Navbar />
-
-        <div className="browse-main">
-          <div className="browse-main__title">
-            <h1>
-              {populars.results[randIndex].title ||
-                populars.results[randIndex].name}
-            </h1>
+      <>
+        <main
+          className="browse"
+          style={{
+            backgroundImage: `linear-gradient(to bottom,rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(https://image.tmdb.org/t/p/original/${populars.results[randIndex].backdrop_path})`,
+          }}
+        >
+          <Navbar />
+          <div className="browse-main">
+            <div className="browse-main__title">
+              <h1>
+                {populars.results[randIndex].title ||
+                  populars.results[randIndex].name}
+              </h1>
+            </div>
+            <div className="browse-main__description">
+              <p>
+                {populars.results[randIndex].overview.length >= 75
+                  ? populars.results[randIndex].overview.substr(0, 75) + "..."
+                  : populars.results[randIndex].overview}
+              </p>
+            </div>
+            <div className="browse-main__btns">
+              <button type="button" className="play">
+                <span>
+                  <GrPlayFill />
+                </span>
+                Play
+              </button>
+              <button type="button" className="about">
+                <span>
+                  <AiOutlineInfoCircle />
+                </span>
+                About more
+              </button>
+            </div>
           </div>
-          <div className="browse-main__description">
-            <p>
-              {populars.results[randIndex].overview.length >= 75
-                ? populars.results[randIndex].overview.substr(0, 75) + "..."
-                : populars.results[randIndex].overview}
-            </p>
-          </div>
-          <div className="browse-main__btns">
-            <button type="button" className="play">
-              <span>
-                <GrPlayFill />
-              </span>
-              Play
-            </button>
-            <button type="button" className="about">
-              <span>
-                <AiOutlineInfoCircle />
-              </span>
-              About more
-            </button>
-          </div>
-        </div>
-      </main>
+        </main>
+      </>
     );
   };
 

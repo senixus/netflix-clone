@@ -18,10 +18,13 @@ const Navbar = () => {
   const search = (show) => dispatch(searhShows(show));
   const [isTrue, setIsTrue] = useState(false);
   const [show, setShow] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     getCurrentUser();
   }, []);
+
+  const showSideMenu = () => setIsOpen(!isOpen);
 
   const handleNavbar = () => {
     const { pathname } = history.location;
@@ -49,7 +52,7 @@ const Navbar = () => {
   const handleIndexPage = () => {
     if (history.location.pathname !== "/") {
       return (
-        <ul className="navbar-navs">
+        <ul className={isOpen ? "mobile-menu__navs" : "navbar-navs"}>
           <li className="navbar-navs__item">
             <Link to="/browse" className="navbar-navs__link">
               Home
@@ -118,7 +121,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="navbar"
+      className={isOpen ? "mobile-menu" : "navbar"}
       style={handleNavbar() && { backgroundColor: "#000" }}
     >
       <div className="navbar-logo">
@@ -132,6 +135,9 @@ const Navbar = () => {
       {handleIndexPage()}
       <div className="last-child">
         <ul className="browse-navbar">{checkUserAndPath()}</ul>
+      </div>
+      <div className="hamburger" onClick={showSideMenu}>
+        <Fa.FaBars />
       </div>
     </nav>
   );
