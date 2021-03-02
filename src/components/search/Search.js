@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Modal from "../modal/Modal";
+import "./search.scss";
+import Searchbar from "./Searchbar";
 
 const Search = () => {
   const searchedItems = useSelector((state) => state.search.searchedShows);
-
   const [movie, setMovie] = useState({});
   const [isOpen, setIsOpen] = useState(false);
 
@@ -19,10 +20,10 @@ const Search = () => {
 
   return (
     <>
-      <main className="my-list">
+      <Searchbar />
+      <main className="search-list">
         <h1>Search Results :</h1>
-
-        <div className="my-list__shows">
+        <div className="search-list__shows">
           {searchedItems.results &&
             searchedItems.results.map((show) => (
               <div key={show.id} class="list-items" data-id={show.id}>

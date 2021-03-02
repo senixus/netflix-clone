@@ -11,6 +11,7 @@ import Profile from "../profile/Profile";
 import Password from "../profile/Password";
 import Email from "../profile/Email";
 import MyList from "../myList/MyList";
+import Search from "../search/Search";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <PrivateRoute exact path="/browse" component={BrowsePage} />
         <Route exact path="/movies" component={Movies} />
         <Route path="/tv" component={TvShows} />
+        <Route path="/search" component={Search} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <PrivateRoute path="/profile" component={Profile} />

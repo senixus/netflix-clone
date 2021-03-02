@@ -9,14 +9,12 @@ import Movie from "../movies/Movie";
 import Tvs from "../tv/Tvs";
 import { useHistory } from "react-router-dom";
 import BrowseFooter from "../browseFooter/BrowseFooter";
-import Search from "../search/Search";
 
 const Browse = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const getPopular = () => dispatch(getPopularMovies());
   const populars = useSelector((state) => state.popularMovie.popularMovie);
-  const searchedItems = useSelector((state) => state.search.searchedShows);
 
   let randIndex = 0;
 
@@ -32,12 +30,6 @@ const Browse = () => {
           <BrowseFooter />
         </>
       );
-    }
-  };
-
-  const handleSearchComponent = () => {
-    if (searchedItems.results) {
-      return <Search />;
     }
   };
 
@@ -90,7 +82,7 @@ const Browse = () => {
   return (
     <div>
       {populars.results && getRandomMovie()}
-      {handleSearchComponent()}
+
       {handlePath()}
     </div>
   );

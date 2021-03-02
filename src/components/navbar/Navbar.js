@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { currentUserAction } from "../../redux/actions/authActions/currentUserActions";
 import { logoutActions } from "../../redux/actions/authActions/logoutActions";
 import * as Fa from "react-icons/fa";
-import { searhShows } from "../../redux/actions/searchActions/searchShow";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -15,9 +14,6 @@ const Navbar = () => {
   const user = useSelector((state) => state.auth.user);
   const history = useHistory();
   const logout = () => dispatch(logoutActions());
-  const search = (show) => dispatch(searhShows(show));
-  const [isTrue, setIsTrue] = useState(false);
-  const [show, setShow] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -36,17 +32,6 @@ const Navbar = () => {
     ) {
       return true;
     }
-  };
-
-  const handleSearchBar = (e) => {
-    if (e.target) {
-      setIsTrue(!isTrue);
-    }
-  };
-  const handleSearch = (e) => {
-    const query = e.target.value;
-    setShow(query);
-    search(show);
   };
 
   const handleIndexPage = () => {
@@ -69,6 +54,11 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="navbar-navs__item">
+            <Link to="/search" className="navbar-navs__link">
+              Search
+            </Link>
+          </li>
+          <li className="navbar-navs__item">
             {user && (
               <Link to="/browse/my-list" className="navbar-navs__link">
                 My List
@@ -84,15 +74,6 @@ const Navbar = () => {
     if (user && history.location.pathname !== "/") {
       return (
         <li className="browse-navbar__item">
-          <input
-            type="text"
-            placeholder="Search movie,tv shows"
-            className={isTrue ? `search-bar` : `browse-navbar__search`}
-            onChange={handleSearch}
-            name="show"
-            value={show}
-          />
-          <Fa.FaSearch className="search-icon" onClick={handleSearchBar} />
           <Link
             className="browse-navbar__link dropdown-btn"
             style={{ marginLeft: "1rem" }}

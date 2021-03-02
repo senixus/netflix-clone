@@ -1,0 +1,64 @@
+@import "../../style/variables";
+
+.search-list {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: $netflix-color-dark;
+  padding-left: 2.5rem;
+
+  h1 {
+    color: $primary-color-white;
+    padding: 1rem 0 3rem 0;
+  }
+  &__shows {
+    display: flex;
+    flex-wrap: wrap;
+
+    .list-items {
+      margin: 0.5rem 0;
+
+      img {
+        width: 250px;
+        max-height: 300px;
+        object-fit: contain;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.search-bar {
+  background-color: $secondary-color-dark;
+
+  &__div {
+    padding: 5rem 0;
+
+    input {
+      width: 90%;
+      padding: 0.4rem 1.5rem;
+      outline: none;
+      border-radius: 100px;
+      border: none;
+    }
+
+    .search-icon {
+      color: $netflix-color-dark;
+      font-size: 1.5rem;
+      margin-left: -2rem;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .search-list__shows {
+    justify-content: center;
+  }
+}
