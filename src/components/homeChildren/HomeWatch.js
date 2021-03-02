@@ -2,7 +2,7 @@ import React from "react";
 import devices from "../../images/device-pile.png";
 const HomeWatch = () => {
   return (
-    <section className="home-watch">
+    <section className="home-watch util">
       <div className="home-watch__text">
         <h3>Watch everywhere.</h3>
         <p>

@@ -122,6 +122,7 @@
   animation: mobileMenuEntry 0.3s linear;
   background-color: $netflix-color-dark !important;
   top: 0;
+  z-index: 20;
 
   &__navs {
     display: flex;

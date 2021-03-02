@@ -1,5 +1,4 @@
 import React from "react";
-import * as Fa from "react-icons/io";
 import { Link } from "react-router-dom";
 import "./getStarted.scss";
 
@@ -16,7 +15,6 @@ const GetStarted = () => {
       />
       <Link to="/register" className="header-register__link">
         get started
-        <Fa.IoIosArrowForward style={{ verticalAlign: "text-top" }} />
       </Link>
     </div>
   );

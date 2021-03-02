@@ -10,19 +10,6 @@ import HomeEnjoy from "../homeChildren/HomeEnjoy";
 import HomeDownload from "../homeChildren/HomeDownload";
 import HomeWatch from "../homeChildren/HomeWatch";
 const Home = () => {
-  const user = useSelector((state) => state.auth.user);
-  const history = useHistory();
-
-  // useEffect(() => {
-  //   const handleUser = () => {
-  //     if (user && history.location.pathname === "/") {
-  //       history.push("/movies");
-  //     }
-  //   };
-
-  //   handleUser();
-  // });
-
   return (
     <main className="home">
       <div className="home-background">

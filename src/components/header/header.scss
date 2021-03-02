@@ -29,10 +29,36 @@
 }
 
 @media screen and (max-width: 998px) {
+  .header {
+    &-text {
+      &__head {
+        font-size: 3.1rem;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .header {
+    &-text {
+      padding-top: 2rem;
+      &__head {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+      }
+      &__subhead {
+        font-size: 1.4rem;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 550px) {
+  .header {
+    &-text {
+      &__head {
+        font-size: 2.5rem;
+      }
+    }
+  }
 }

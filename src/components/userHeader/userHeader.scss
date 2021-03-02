@@ -9,10 +9,26 @@
 
   &__image {
     padding-left: 3rem;
-
+    padding-bottom: 1rem;
     img {
-      width: 14rem;
+      width: 10rem;
       height: auto;
     }
   }
+}
+
+@media screen and (max-width: 998px) {
+}
+
+@media screen and (max-width: 768px) {
+  .user-header {
+    &__image {
+      img {
+        width: 8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
 }

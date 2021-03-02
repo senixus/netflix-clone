@@ -2,7 +2,7 @@ import React from "react";
 import tv from "../../images/tv.png";
 const HomeEnjoy = () => {
   return (
-    <section className="home-enjoy">
+    <section className="home-enjoy util">
       <div className="home-enjoy__text">
         <h3>Enjoy on your TV.</h3>
         <p>

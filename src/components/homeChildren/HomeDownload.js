@@ -4,7 +4,7 @@ import phoneBox from "../../images/phone-box.png";
 
 const HomeDownload = () => {
   return (
-    <section className="home-download">
+    <section className="home-download util">
       <div className="home-download__phone">
         <img src={mobile} alt="netflix mobile" />
         <div className="download">

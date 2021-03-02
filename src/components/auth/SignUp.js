@@ -38,6 +38,7 @@ const SignUp = () => {
               className="form-group__control"
               onChange={handleChange}
               value={user.email}
+              required
             />
           </div>
           <div className="form-group">
@@ -48,6 +49,7 @@ const SignUp = () => {
               className="form-group__control"
               onChange={handleChange}
               value={user.password}
+              required
             />
           </div>
           <small style={{ color: "red" }}>{handleError()}</small>

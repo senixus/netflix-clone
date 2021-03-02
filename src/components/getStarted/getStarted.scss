@@ -29,3 +29,52 @@
     }
   }
 }
+
+@media screen and (max-width: 998px) {
+  .header-register {
+    &__text {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-register {
+    padding: 0 2rem;
+    &__text {
+      font-size: 1.1rem;
+      padding: 0 1rem;
+    }
+
+    &__input {
+      width: 60%;
+      padding: 0.45rem 0.7rem;
+    }
+
+    &__link {
+      width: 35%;
+
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-register {
+    &__text {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+    &__input {
+      width: 100%;
+      padding: 0.45rem 0.7rem;
+    }
+
+    &__link {
+      width: 100%;
+      display: block;
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+  }
+}

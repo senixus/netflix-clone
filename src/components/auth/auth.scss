@@ -8,11 +8,11 @@
 
   &__child {
     background-color: rgba(0, 0, 0, 0.75);
-    width: 40%;
+    max-width: 45%;
     height: auto;
     border-radius: 5px;
     margin-top: -1.2rem;
-    padding: 3rem 3rem 8rem 3rem;
+    padding: 3rem 3rem 5.5rem 3rem;
 
     h2 {
       color: $primary-color-white;
@@ -89,6 +89,28 @@
       padding-top: 1.2rem;
       font-size: 0.8rem;
       width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 998px) {
+  .auth-form {
+    &__child {
+      max-width: 60%;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .auth-form {
+    &__child {
+      max-width: 75%;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .auth-form {
+    &__child {
+      max-width: 85%;
     }
   }
 }
