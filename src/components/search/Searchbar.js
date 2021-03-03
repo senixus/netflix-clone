@@ -10,6 +10,7 @@ const Searchbar = () => {
 
   const handleSearch = (e) => {
     const query = e.target.value;
+
     search(query);
   };
 

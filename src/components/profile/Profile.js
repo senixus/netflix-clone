@@ -23,13 +23,13 @@ const Profile = () => {
                 className="subscription-cancel"
                 onClick={() => deleteUserAccount()}
               >
-                cancel subscription
+                cancel account
               </button>
             </div>
             <div className="profile-childs__information">
               <ul>
                 <li>{user.email}</li>
-                <li>{user.password || <p>******</p>} </li>
+                <li>********</li>
               </ul>
               <ul>
                 <li>

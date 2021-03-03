@@ -7,7 +7,7 @@ export const getActionMovies = () => {
     try {
       const action = await api.get(request.getActionMovies);
 
-      dispatch({ type: actionTypes.GET_ACTİON_MOVIES, payload: action.data });
+      dispatch({ type: actionTypes.GET_ACTION_MOVIES, payload: action.data });
     } catch (error) {
       console.log(error);
     }

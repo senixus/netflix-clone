@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { registerAction } from "../../redux/actions/authActions/registerActions";
 
 const SignUp = () => {
-  const [user, setUser] = useState({ email: "", password: "" });
+  const [user, setUser] = useState({ email: "", password: "", username: "" });
   const dispatch = useDispatch();
-  const register = (email, password) =>
-    dispatch(registerAction(email, password));
+  const register = (email, password, username) =>
+    dispatch(registerAction(email, password, username));
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
@@ -17,8 +17,8 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    register(user.email, user.password);
-    setUser({ email: "", password: "" });
+    register(user.email, user.password, user.username);
+    setUser({ email: "", password: "", username: "" });
   };
 
   const handleError = () => {
@@ -30,6 +30,17 @@ const SignUp = () => {
       <div className="auth-form__child">
         <h2>Sign Up</h2>
         <form className="form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              className="form-group__control"
+              onChange={handleChange}
+              value={user.username}
+              required
+            />
+          </div>
           <div className="form-group">
             <input
               type="email"
