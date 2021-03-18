@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Navbar from "../navbar/Navbar";
 import "./browse.scss";
 import { GrPlayFill } from "react-icons/gr";

@@ -18,6 +18,14 @@ const Navbar = () => {
 
   useEffect(() => {
     getCurrentUser();
+
+    const handleMobileNav = (e) => {
+      if (e.target.innerWidth >= 600) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleMobileNav);
+    return () => window.removeEventListener("resize", handleMobileNav);
   }, []);
 
   const showSideMenu = () => setIsOpen(!isOpen);

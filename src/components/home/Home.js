@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./home.scss";
 import Collapsible from "../collapse/Collapsible";
 import GetStarted from "../getStarted/GetStarted";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
-import { Redirect, useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
 import HomeEnjoy from "../homeChildren/HomeEnjoy";
 import HomeDownload from "../homeChildren/HomeDownload";
 import HomeWatch from "../homeChildren/HomeWatch";

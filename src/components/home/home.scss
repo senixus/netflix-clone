@@ -138,20 +138,29 @@
 
     &__tv {
       position: relative;
+      width: 100%;
+      max-width: 600px;
 
       img {
-        width: 520px;
+        max-width: 100%;
         height: auto;
+        border: 0;
+        position: relative;
+        z-index: 2;
       }
 
       .home-watch__video {
+        width: 100%;
+        height: 100%;
+        max-width: 63%;
+        max-height: 50%;
         position: absolute;
-        top: 11%;
-        left: 2%;
+        top: 10%;
+        left: 19%;
 
         video {
           width: 100%;
-          height: 160px;
+          height: 100%;
         }
       }
     }
@@ -245,15 +254,6 @@
         }
         p {
           font-size: 1.2rem;
-        }
-      }
-      &__tv {
-        img {
-          width: 100%;
-        }
-
-        video {
-          width: 100%;
         }
       }
     }
