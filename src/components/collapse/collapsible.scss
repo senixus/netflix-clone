@@ -46,3 +46,35 @@
     }
   }
 }
+
+
+@media screen and (max-width:768px){
+  .collapsible {
+    &-child {
+      h1 {
+          font-size:2.5rem;
+      }
+  div {
+button   {
+        font-size:1.4rem ;
+      }
+  }
+      
+    }
+  }
+}
+
+@media screen and (max-width:550px){
+  .collapsible {
+    &-child {
+      h1 {
+          font-size:1.7rem;
+      }
+      div {
+        button {
+          font-size:1.2rem;
+        }
+      }
+    }
+  }
+}

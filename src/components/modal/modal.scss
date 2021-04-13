@@ -141,5 +141,32 @@
     &__child {
       width: 100%;
     }
+
+    &__image {
+      .modal-close {
+        top:.4rem;
+        right:.4rem;
+        button {
+          .close-icon {
+            font-size:1.7rem;
+          }
+        }
+      }
+    }
+
+    &__btns {
+      .modal-play__btn {
+        font-size:0.9rem;
+      }
+    }
+
+    &__description {
+      height:auto;
+    }
+
+    .plus-icon, .like-icon {
+      font-size:2rem;
+      font-weight:bolder;
+    }
   }
 }
