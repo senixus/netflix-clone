@@ -9,21 +9,15 @@ import { useHistory } from "react-router-dom";
 import ReactDOM from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addShowToList } from "../../redux/actions/myListActions/addShowToList";
-import { getUserShowList } from "../../redux/actions/myListActions/getUserShowList";
 import { removeShowFromTheList } from "../../redux/actions/myListActions/removeShowFromTheList";
 
 const Modal = ({ open, closeModal, movie, movieId }) => {
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
   const addShow = (uid, show) => dispatch(addShowToList(uid, show));
-  const getListItems = (user) => dispatch(getUserShowList(user));
   const removeShowFromTheMyList = (movieId) =>
     dispatch(removeShowFromTheList(movieId));
   const history = useHistory();
-
-  useEffect(() => {
-    getListItems(user.uid);
-  }, []);
 
   const addShowMyList = (uid, show) => {
     if (user) {
@@ -32,18 +26,23 @@ const Modal = ({ open, closeModal, movie, movieId }) => {
   };
 
   const handleIcon = () => {
-    if (history.location.pathname !== "/browse/my-list") {
-      return (
-        <button type="button" onClick={() => addShowMyList(user.uid, movie)}>
-          <CgMathPlus className="plus-icon" />
-        </button>
-      );
-    } else {
-      return (
-        <button type="button" onClick={() => removeShowFromTheMyList(movieId)}>
-          <MdCheck className="plus-icon" />
-        </button>
-      );
+    if (user) {
+      if (history.location.pathname !== "/browse/my-list") {
+        return (
+          <button type="button" onClick={() => addShowMyList(user.uid, movie)}>
+            <CgMathPlus className="plus-icon" />
+          </button>
+        );
+      } else {
+        return (
+          <button
+            type="button"
+            onClick={() => removeShowFromTheMyList(movieId)}
+          >
+            <MdCheck className="plus-icon" />
+          </button>
+        );
+      }
     }
   };
 

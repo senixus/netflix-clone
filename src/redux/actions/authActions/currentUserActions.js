@@ -2,9 +2,9 @@ import * as actionTypes from "../actionTypes";
 import { auth } from "../../../firebase/firebase";
 
 export const currentUserAction = () => {
-  return async (dispatch) => {
+  return (dispatch) => {
     try {
-      await auth.onAuthStateChanged((user) =>
+      auth.onAuthStateChanged((user) =>
         dispatch({ type: actionTypes.CURRENT_USER, payload: user })
       );
     } catch (error) {

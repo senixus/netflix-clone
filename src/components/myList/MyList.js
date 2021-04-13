@@ -18,8 +18,8 @@ const MyList = () => {
   const [movieId, setMovieId] = useState(null);
 
   useEffect(() => {
-    getListItems(user.uid);
-  }, [getListItems, user.uid]);
+    getListItems(user);
+  }, [user]);
 
   const openModal = (movie, show) => {
     setMovie(movie);
@@ -39,7 +39,7 @@ const MyList = () => {
         <div className="my-list__shows">
           {getUserShows &&
             getUserShows.map((show) => (
-              <div key={show.id} class="list-items" data-id={show.id}>
+              <div key={show.id} className="list-items" data-id={show.id}>
                 <img
                   src={`https://image.tmdb.org/t/p/original/${show.movie.poster_path}`}
                   alt="show list"

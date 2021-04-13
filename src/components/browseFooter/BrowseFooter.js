@@ -35,55 +35,55 @@ const BrowseFooter = () => {
           <div className="footer-child-first">
             <ul>
               <li>
-                <Link to="!">FAQ</Link>
+                <Link to="/">FAQ</Link>
               </li>
               <li>
-                <Link to="!">Investor Relations</Link>
+                <Link to="/">Investor Relations</Link>
               </li>
               <li>
-                <Link to="!">Ways to Watch</Link>
+                <Link to="/">Ways to Watch</Link>
               </li>
               <li>
-                <Link to="!">Corporate Information</Link>
+                <Link to="/">Corporate Information</Link>
               </li>
             </ul>
           </div>
           <div className="footer-child-second">
             <ul>
               <li>
-                <Link to="!">Help Center</Link>
+                <Link to="/">Help Center</Link>
               </li>
               <li>
-                <Link to="!">Jobs</Link>
+                <Link to="/">Jobs</Link>
               </li>
               <li>
-                <Link to="!">Terms of Use</Link>
+                <Link to="/">Terms of Use</Link>
               </li>
             </ul>
           </div>
           <div className="footer-child-third">
             <ul>
               <li>
-                <Link to="!">Account</Link>
+                <Link to="/">Account</Link>
               </li>
               <li>
-                <Link to="!">Redeem Gift Cards</Link>
+                <Link to="/">Redeem Gift Cards</Link>
               </li>
               <li>
-                <Link to="!">Privacy</Link>
+                <Link to="/">Privacy</Link>
               </li>
             </ul>
           </div>
           <div className="footer-child-fourth">
             <ul>
               <li>
-                <Link to="!">Media Center</Link>
+                <Link to="/">Media Center</Link>
               </li>
               <li>
-                <Link to="!">Buy Gift Cards</Link>
+                <Link to="/">Buy Gift Cards</Link>
               </li>
               <li>
-                <Link to="!">Cookie Preferences</Link>
+                <Link to="/">Cookie Preferences</Link>
               </li>
             </ul>
           </div>

@@ -1,4 +1,4 @@
-const apiKey = "APIKEY";
+const apiKey = "";
 
 export const request = {
   // Movies
