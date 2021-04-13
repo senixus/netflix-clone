@@ -91,3 +91,16 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .profile-childs {
+    .subscription {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__information {
+      margin: 1rem auto;
+    }
+  }
+}

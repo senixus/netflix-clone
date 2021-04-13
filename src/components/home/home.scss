@@ -273,6 +273,20 @@
           font-size: 1.1rem;
         }
       }
+      img {
+        width: 100%;
+      }
+
+      &__video {
+        .home-enjoy {
+          &__videos {
+            video {
+              width: 227px;
+              height: auto;
+            }
+          }
+        }
+      }
     }
     &-download {
       flex-direction: column;
@@ -284,6 +298,12 @@
         }
         p {
           font-size: 1.1rem;
+        }
+      }
+
+      &__phone {
+        img {
+          width: 100%;
         }
       }
     }
