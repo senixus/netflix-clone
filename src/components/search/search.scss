@@ -58,7 +58,22 @@
 }
 
 @media screen and (max-width: 550px) {
+  .search-list {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
   .search-list__shows {
     justify-content: center;
+  }
+
+  .search-bar {
+    &__div {
+      text-align: center;
+
+      .search-icon {
+        font-size: 1.3rem;
+      }
+    }
   }
 }

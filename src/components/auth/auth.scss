@@ -110,7 +110,16 @@
 @media screen and (max-width: 600px) {
   .auth-form {
     &__child {
-      max-width: 85%;
+      max-width: 90%;
+    }
+  }
+
+  .form {
+    &-group {
+      margin: 0 -1rem auto -1rem;
+      &__control {
+        padding: 0.6rem 2rem;
+      }
     }
   }
 }

@@ -34,7 +34,17 @@
 }
 
 @media screen and (max-width: 550px) {
+  .my-list {
+    padding-left: 0;
+
+    h1 {
+      padding-left: 2rem;
+      font-size: 2rem;
+    }
+  }
+
   .my-list__shows {
     justify-content: center;
+    align-items: center;
   }
 }

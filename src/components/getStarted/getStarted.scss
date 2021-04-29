@@ -78,3 +78,22 @@
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .header-register {
+    &__text {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+    &__input {
+      padding: 0.5rem 0.7rem;
+      font-size: 1rem;
+    }
+
+    &__link {
+      font-size: 1rem;
+      margin-top: 1rem;
+      padding: 0.5rem 2rem;
+    }
+  }
+}

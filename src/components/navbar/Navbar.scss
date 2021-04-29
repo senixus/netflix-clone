@@ -6,6 +6,7 @@
   align-items: center !important;
   padding: 0 3rem !important;
   position: relative;
+
   &::after {
     clear: both;
     display: table;
@@ -171,6 +172,20 @@
 
   .hamburger {
     display: block;
+  }
+}
+
+@media screen and(max-width:600px) {
+  .navbar {
+    &-logo {
+      line-height: 5;
+      margin-left: -2rem;
+      &__item {
+        img {
+          width: 120px;
+        }
+      }
+    }
   }
 }
 
