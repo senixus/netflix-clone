@@ -7,7 +7,7 @@ export const getActionAdventureTv = () => {
     try {
       const action = await api.get(request.getActionAdventureTvShows);
 
-      dispatch({ type: actionTypes.GET_ACTİON_TV, payload: action.data });
+      dispatch({ type: actionTypes.GET_ACTION_TV, payload: action.data });
     } catch (error) {
       console.log(error);
     }

@@ -1,4 +1,4 @@
-const apiKey = "APIKEY";
+const apiKey = process.env.REACT_APP_API_URL;
 
 export const request = {
   // Movies

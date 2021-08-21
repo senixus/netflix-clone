@@ -1,4 +1,12 @@
-# Getting Started
+# Netflix Clone
+
+## Technologies
+- Hooks
+- Redux
+- Redux thunk
+- React router
+- Firebase (Firestore, Auth)
+- Unit test (Jest)
 
 Clone this project
 `git clone https://github.com/senixus/netflix-clone.git`
@@ -8,7 +16,7 @@ Clone this project
 ## API
 
 Get your api [here](https://developers.themoviedb.org/3/getting-started/introduction)
-set your in to the request file
+set your api in to the request file
 
 ## Firebase
 

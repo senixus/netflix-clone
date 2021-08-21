@@ -85,6 +85,7 @@ const Navbar = () => {
           <Link
             className="browse-navbar__link dropdown-btn"
             style={{ marginLeft: "1rem" }}
+            to
           >
             <img src={avatar} alt="netflix avatar" className="avatar" />
             <div className="dropdown-content">
