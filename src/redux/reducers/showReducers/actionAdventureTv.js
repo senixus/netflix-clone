@@ -3,7 +3,7 @@ import { initialState } from "../initialState";
 
 export const actionAdventureTv = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.GET_ACTİON_TV:
+    case actionTypes.GET_ACTION_TV:
       return {
         ...state,
         actionAdventureTv: action.payload,
